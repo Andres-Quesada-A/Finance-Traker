@@ -84,6 +84,7 @@ struct DebitCard: Identifiable, Codable {
     var balance: Double
     var bankName: String?
     var currency: Currency
+    var cardType: String // Visa, MasterCard, etc.
 }
 
 struct CreditCard: Identifiable, Codable {
@@ -95,6 +96,11 @@ struct CreditCard: Identifiable, Codable {
     var currentBalance: Double
     var bankName: String?
     var currency: Currency
+    var cardType: String // Visa, MasterCard, etc.
+    var billingCycleStartDay: Int // Día de inicio del ciclo de facturación
+    var billingCycleDuration: Int // Duración del ciclo de facturación en días
+    var paymentDueDuration: Int // Duración después del corte para la fecha de pago en días
+
 }
 
 // Modelo para Detalles de Pago

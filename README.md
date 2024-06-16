@@ -82,6 +82,7 @@ Table DebitCard {
     balance FLOAT
     bank_name VARCHAR(255, null)
     currency_id UUID [ref: > Currency.id]
+    card_type VARCHAR(10)
 }
 
 Table CreditCard {
@@ -91,6 +92,10 @@ Table CreditCard {
     expiration_date DATE
     credit_limit FLOAT
     current_balance FLOAT
+    card_type VARCHAR(10)
+    billing_cycle_start_day int
+    billing_cycle_duration int
+    payment_due_duration int
     bank_name VARCHAR(255, null)
     currency_id UUID [ref: > Currency.id]
 }
